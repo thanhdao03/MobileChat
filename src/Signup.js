@@ -12,29 +12,29 @@ const Signup = () => {
   const [text, onChangeText] = React.useState("");
   const [number, onChangeNumber] = React.useState("");
   return (
-    <SafeAreaView style={styles.backgroundColor}>
+    <SafeAreaView style={styles.container}>
       <View>
-        <Text style={styles.div1}>Hello Again!</Text>
-        <Text style={styles.div1}>welcome back you've been missed</Text>
+        <Text style={styles.textHello}>Hello Again!</Text>
+        <Text style={styles.textHello}>welcome back you've been missed</Text>
       </View>
       <TextInput
-        style={styles.input1}
+        style={styles.inputUsername}
         onChangeText={onChangeText}
         placeholder="Username"
       />
       <TextInput
-        style={styles.input2}
+        style={styles.inputPassWord}
         onChangeText={onChangeNumber}
         placeholder="Password"
       />
       <TextInput
-        style={styles.input2}
+        style={styles.inputPassWord}
         onChangeText={onChangeNumber}
         placeholder="Confirm Password"
         keyboardType=""
       />
       <TextInput
-        style={styles.input2}
+        style={styles.inputPassWord}
         onChangeText={onChangeNumber}
         placeholder="Email"
         keyboardType="email-address"
@@ -57,12 +57,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  div1: {
+  textHello: {
     textAlign: "center",
     fontSize: 30,
     fontWeight: "bold",
   },
-  input1: {
+  inputUsername: {
     height: 40,
     margin: 12,
     borderRadius: 10,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginTop: 50,
   },
-  input2: {
+  inputPassWord: {
     height: 40,
     margin: 12,
     borderRadius: 10,

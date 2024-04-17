@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backfaceVisibility: "visible",
-    backgroundColor: ,
+    backgroundColor: white,
   },
   div1: {
     textAlign: "center",
