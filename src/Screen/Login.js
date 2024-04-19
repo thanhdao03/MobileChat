@@ -15,28 +15,12 @@ import CustomTextInput from "../common/CustomTextInput";
 
 const Login = () => {
   const navigation = useNavigation();
-  const [email, setEmail] = useState("");
-  const [password, setPassWord] = useState("");
+  const [name, setName] = useState("thanhdao02dd@gmail.com");
+  const [pass, setPass] = useState("12345678");
   const [err, setErr] = useState(false);
-  const [showPassWord1, setShowPass1] = useState(true);
   const [errMessage, setErrMessage] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-
-  
-  useEffect(() => {
-    setErr(false);
-  }, []);
-  const showPass1 = () => {
-    setShowPass1(!showPassWord1);
-  };
   const validate = () => {
-    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    const data = {
-      email: email,
-      password: password,
-    };
-    
   };
   return ( 
     <LinearGradient
@@ -45,65 +29,36 @@ const Login = () => {
       }}
       colors={[COLORS.color5, COLORS.color4]}
     >
-      <Image
-        source={require("../Screen/image/hero2.jpg")}
-        style={{
-          width: 130,
-          height: 130,
-          alignSelf: "center",
-          marginTop: 50,
-          borderRadius: 130,
-          marginBottom: 20,
-        }}
-      ></Image>
-
       <Text
         style={{
-          marginTop: 50,
-          alignSelf: "center",
-          fontSize: 24,
+          marginTop: 10,
+          alignSelf: "flex-start",
+          fontSize: 30,
           fontWeight: 600,
           color: COLORS.white,
+          marginBottom:200,
+          marginLeft:30
         }}
       >
-        Hi Welcome Back ! 👋 Login
+        Bkav Chat
       </Text>
+      <Text style={{marginLeft:52, fontSize:20}}>Tai Khoan</Text>
       <CustomTextInput
-        placeholder={"Xin Nhập Tài Email"}
+        placeholder={""}
         icon={require("../Screen/image/email.png")}
-        value={email}
-        onChangeText={(text) => {
-          setEmail(text);
-        }}
+        value={name}
+        onChangeText={setName}
       ></CustomTextInput>
 
       <View style={{ position: "relative" }}>
+      <Text style={{marginLeft:52, fontSize:20,marginTop:20}}>Mat khau</Text>
         <CustomTextInput
-          value={password}
-          onChangeText={(text) => {
-            setPassWord(text);
-          }}
-          type={showPassWord1 ? "password" : "texxt"}
-          placeholder={"Xin Nhập Mật Khẩu"}
+          value={pass}
+          onChangeText={setPass}
+          placeholder={""}
           icon={require("../Screen/image/pass.png")}
-        ></CustomTextInput>
-
-        <Pressable
-          style={{ position: "absolute", right: 50, top: 31 }}
-          onPress={() => showPass1()}
         >
-          {showPassWord1 ? (
-            <Image
-              style={{ width: 20, height: 20, marginTop: 4 }}
-              source={require("../Screen/image/eye.png")}
-            />
-          ) : (
-            <Image
-              style={{ width: 20, height: 20, marginTop: 4 }}
-              source={require("../Screen/image/hidden.png")}
-            />
-          )}
-        </Pressable>
+        </CustomTextInput>
       </View>
       <View
         style={{
@@ -119,26 +74,22 @@ const Login = () => {
           onValueChange={setIsChecked}
           color={isChecked ? COLORS.black : undefined}
         />
-
         <Text>Remember </Text>
       </View>
-
       {err == true && (
         <Text style={{ marginTop: 10, marginLeft: 40, color: "red" }}>
           {errMessage}
         </Text>
       )}
-
       <CustomButton
         style={{}}
         title={"Login"}
         bgColor={"white"}
         textColor={"black"}
-        onPress={() => navigation.navigate('MainChat')
-          // validate();
+        onPress={() =>{navigation.navigate('MainChat')}
+        // => navigation.navigate('MainChat')
         }
       ></CustomButton>
-
       <View
         style={{
           flexDirection: "row",
@@ -167,7 +118,6 @@ const Login = () => {
 
       <View style={{ flexDirection: "row", justifyContent: "center" }}>
         <TouchableOpacity
-          // onPress={handleFacebookLogin}
           style={{
             flex: 1,
             marginTop: 10,
@@ -196,7 +146,6 @@ const Login = () => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          // onPress={handleGoogleLogin}
           style={{
             flex: 1,
             marginTop: 10,
