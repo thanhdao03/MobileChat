@@ -4,12 +4,7 @@ import { TextInput, TouchableOpacity, SafeAreaView } from "react-native";
 import Checkbox from "expo-checkbox";
 import COLORS from "../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
-import {
-  Image,
-  Text,
-  View,
-  Pressable,
-} from "react-native";
+import { Image, Text, View, Pressable } from "react-native";
 import CustomButton from "../common/CustomButton";
 import CustomTextInput from "../common/CustomTextInput";
 
@@ -20,9 +15,8 @@ const Login = () => {
   const [err, setErr] = useState(false);
   const [errMessage, setErrMessage] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  const validate = () => {
-  };
-  return ( 
+  const validate = () => {};
+  return (
     <LinearGradient
       style={{
         flex: 1,
@@ -36,13 +30,13 @@ const Login = () => {
           fontSize: 30,
           fontWeight: 600,
           color: COLORS.white,
-          marginBottom:200,
-          marginLeft:30
+          marginBottom: 100,
+          marginLeft: 30,
         }}
       >
         Bkav Chat
       </Text>
-      <Text style={{marginLeft:52, fontSize:20}}>Tai Khoan</Text>
+      <Text style={{ marginLeft: 52, fontSize: 20 }}>Tai Khoan</Text>
       <CustomTextInput
         placeholder={""}
         icon={require("../Screen/image/email.png")}
@@ -51,21 +45,22 @@ const Login = () => {
       ></CustomTextInput>
 
       <View style={{ position: "relative" }}>
-      <Text style={{marginLeft:52, fontSize:20,marginTop:20}}>Mat khau</Text>
+        <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
+          Mat khau
+        </Text>
         <CustomTextInput
           value={pass}
           onChangeText={setPass}
           placeholder={""}
           icon={require("../Screen/image/pass.png")}
-        >
-        </CustomTextInput>
+        ></CustomTextInput>
       </View>
       <View
         style={{
           flexDirection: "row",
           marginTop: 10,
-          flexDirection:'row-reverse',
-          marginRight:40
+          flexDirection: "row-reverse",
+          marginRight: 40,
         }}
       >
         <Checkbox
@@ -86,8 +81,11 @@ const Login = () => {
         title={"Login"}
         bgColor={"white"}
         textColor={"black"}
-        onPress={() =>{navigation.navigate('MainChat')}
-        // => navigation.navigate('MainChat')
+        onPress={
+          () => {
+            navigation.navigate("MainChat");
+          }
+          // => navigation.navigate('MainChat')
         }
       ></CustomButton>
       <View

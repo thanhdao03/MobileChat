@@ -1,12 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
-import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  Pressable,
-} from "react-native";
+import { Text, StyleSheet, View, Image, Pressable } from "react-native";
 import CustomButton from "../common/CustomButton";
 import CustomTextInput from "../common/CustomTextInput";
 import COLORS from "../constants/colors";
@@ -64,7 +58,6 @@ const Signup = () => {
       tenThanhVien: name,
       matKhau: repassword,
     };
-   
   };
   return (
     <LinearGradient
@@ -75,21 +68,20 @@ const Signup = () => {
       showsVerticalScrollIndicator={false}
     >
       <View style={{ flex: 1 }}>
-    
-      <Text
-        style={{
-          marginTop: 10,
-          alignSelf: "flex-start",
-          fontSize: 30,
-          fontWeight: 600,
-          color: COLORS.white,
-          marginBottom:200,
-          marginLeft:30
-        }}
-      >
-        Bkav Chat
-      </Text>
-      <Text style={{marginLeft:52, fontSize:20}}>Tai Khoan</Text>
+        <Text
+          style={{
+            marginTop: 10,
+            alignSelf: "flex-start",
+            fontSize: 30,
+            fontWeight: 600,
+            color: COLORS.white,
+            marginBottom: 100,
+            marginLeft: 30,
+          }}
+        >
+          Bkav Chat
+        </Text>
+        <Text style={{ marginLeft: 52, fontSize: 20 }}>Tai Khoan</Text>
         <CustomTextInput
           value={name}
           onChangeText={(text) => {
@@ -103,14 +95,16 @@ const Signup = () => {
             {errMessage}
           </Text>
         )}
-      
+
         {BadRechecked == true && (
           <Text style={{ marginTop: 10, marginLeft: 40, color: "red" }}>
             {errMessage}
           </Text>
         )}
         <View style={{ position: "relative" }}>
-      <Text style={{marginLeft:52, fontSize:20,marginTop:20}}>Mat khau</Text>
+          <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
+            Mat khau
+          </Text>
 
           <CustomTextInput
             value={password}
@@ -128,7 +122,9 @@ const Signup = () => {
           </Text>
         )}
         <View style={{ position: "relative" }}>
-      <Text style={{marginLeft:52, fontSize:20,marginTop:20}}>Nhap lai mat khau</Text>
+          <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
+            Nhap lai mat khau
+          </Text>
 
           <CustomTextInput
             value={repassword}
@@ -163,7 +159,7 @@ const Signup = () => {
             marginBottom: 50,
           }}
           onPress={() => {
-            navigation.navigate('Login');
+            navigation.navigate("Login");
           }}
         >
           {""}
@@ -173,7 +169,5 @@ const Signup = () => {
     </LinearGradient>
   );
 };
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});
 export default Signup;
