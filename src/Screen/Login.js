@@ -29,14 +29,14 @@ const Login = () => {
           alignSelf: "flex-start",
           fontSize: 30,
           fontWeight: 600,
-          color: COLORS.white,
+          color: COLORS.black,
           marginBottom: 100,
           marginLeft: 30,
         }}
       >
         Bkav Chat
       </Text>
-      <Text style={{ marginLeft: 52, fontSize: 20 }}>Tai Khoan</Text>
+      <Text style={{ marginLeft: 52, fontSize: 20 }}>Username</Text>
       <CustomTextInput
         placeholder={""}
         icon={require("../Screen/image/email.png")}
@@ -46,7 +46,7 @@ const Login = () => {
 
       <View style={{ position: "relative" }}>
         <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
-          Mat khau
+          Password
         </Text>
         <CustomTextInput
           value={pass}
@@ -77,7 +77,7 @@ const Login = () => {
         </Text>
       )}
       <CustomButton
-        style={{}}
+        style={{ outlineStyle: "none" }}
         title={"Login"}
         bgColor={"white"}
         textColor={"black"}

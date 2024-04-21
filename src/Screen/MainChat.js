@@ -6,8 +6,6 @@ import {
   SafeAreaView,
   TextInput,
   Pressable,
-  Modal,
-  FlatList,
 } from "react-native";
 import { useState } from "react";
 
@@ -20,14 +18,19 @@ const MainChat = ({ navigation }) => {
         <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
           Bkav Chat
         </Text>
-        <Image
-          style={{
-            alignSelf: "flex-end",
-            marginBottom: 20,
-            margin: 5,
-          }}
-          source={require("../images/image.png")}
-        />
+        <Pressable onPress={() => navigation.navigate("InfoUser")}>
+          <Image
+            style={{
+              alignSelf: "flex-end",
+              marginBottom: 20,
+              margin: 10,
+              borderRadius: 40,
+              width: 70,
+              height: 70,
+            }}
+            source={require("../images/imgytb.png")}
+          />
+        </Pressable>
       </View>
       <View
         style={{
@@ -49,6 +52,7 @@ const MainChat = ({ navigation }) => {
             height: 35,
             marginTop: 20,
             backgroundColor: "#F2F4F4",
+            outlineStyle: "none",
           }}
           placeholder="Search Friend"
         ></TextInput>

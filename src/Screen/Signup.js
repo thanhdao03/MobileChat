@@ -24,9 +24,9 @@ const Signup = () => {
   showPass = () => {
     setShowPass(!showPassWord);
   };
-  showPass1 = () => {
-    setShowPass1(!showPassWord1);
-  };
+  // showPass1 = () => {
+  //   setShowPass1(!showPassWord1);
+  // };
   dangKi = () => {
     if (name) {
       setBadName(false);
@@ -74,15 +74,16 @@ const Signup = () => {
             alignSelf: "flex-start",
             fontSize: 30,
             fontWeight: 600,
-            color: COLORS.white,
+            color: COLORS.black,
             marginBottom: 100,
             marginLeft: 30,
           }}
         >
           Bkav Chat
         </Text>
-        <Text style={{ marginLeft: 52, fontSize: 20 }}>Tai Khoan</Text>
+        <Text style={{ marginLeft: 52, fontSize: 20 }}>Username</Text>
         <CustomTextInput
+          style={{ outlineStyle: "none" }}
           value={name}
           onChangeText={(text) => {
             setName(text);
@@ -103,10 +104,11 @@ const Signup = () => {
         )}
         <View style={{ position: "relative" }}>
           <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
-            Mat khau
+            PassWord
           </Text>
 
           <CustomTextInput
+            style={{ outlineStyle: "none" }}
             value={password}
             onChangeText={(text) => {
               setPassWord(text);
@@ -123,10 +125,11 @@ const Signup = () => {
         )}
         <View style={{ position: "relative" }}>
           <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
-            Nhap lai mat khau
+            Comfirm PassWord
           </Text>
 
           <CustomTextInput
+            style={{ outlineStyle: "none" }}
             value={repassword}
             onChangeText={(text) => {
               setRePassword(text);
@@ -142,7 +145,8 @@ const Signup = () => {
           </Text>
         )}
         <CustomButton
-          title={"Đăng kí"}
+          style={{ outlineStyle: "none" }}
+          title={"Signup"}
           bgColor={"white"}
           textColor={"black"}
           onPress={() => {
