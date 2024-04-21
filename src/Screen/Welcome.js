@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, Pressable, Image , Button} from "react-native";
+import { View, Text, Pressable, Image, Button } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import COLORS from "../constants/colors";
+import CustomButton from "../common/CustomButton";
 const Welcome = ({ navigation }) => {
   return (
     <LinearGradient
@@ -10,7 +11,7 @@ const Welcome = ({ navigation }) => {
       }}
       colors={[COLORS.color5, COLORS.color4]}
     >
-      <View style={{ flex: 1 ,marginTop:60}}>
+      <View style={{ flex: 1, marginTop: 0 }}>
         <View>
           <Image
             source={require("./image/hero1.jpg")}
@@ -81,51 +82,50 @@ const Welcome = ({ navigation }) => {
         </View>
         <View
           style={{
-            paddingHorizontal: 22,
             position: "absolute",
             top: 400,
             width: "100%",
           }}
         >
-          <Text
-            style={{
-              fontSize: 50,
-              fontWeight: 800,
-              color: COLORS.white,
-            }}
-          >
-            AppChat
-          </Text>
-          <View style={{ marginVertical: 22 }}>
+          <View style={{ paddingHorizontal: 22 }}>
             <Text
               style={{
-                fontSize: 18,
-                color: COLORS.white,
-                marginVertical: 4,
+                fontSize: 50,
+                fontWeight: 800,
+                color: COLORS.black,
               }}
             >
-              Chào mừng các bạn đến với AppChat
+              AppChat
             </Text>
-            <Text
-              style={{
-                fontSize: 18,
-                color: COLORS.white,
-              }}
-            >
-              Phạm Thành Đạo
-            </Text>
+            <View style={{ marginVertical: 22 }}>
+              <Text
+                style={{
+                  fontSize: 18,
+                  color: COLORS.black,
+                  marginVertical: 4,
+                }}
+              >
+                Chào mừng các bạn đến với AppChat
+              </Text>
+              <Text
+                style={{
+                  fontSize: 18,
+                  color: COLORS.black,
+                }}
+              >
+                Phạm Thành Đạo
+              </Text>
+            </View>
           </View>
-
-          <Button
-            title="Đăng kí ngay"
-            onPress={() => navigation.navigate("Signup")}
-            style={{
-              color: COLORS.color4,
-              marginTop: 10,
-              width: "100%",
+          <CustomButton
+            style={{}}
+            title={"Đăng ký nhanh"}
+            bgColor={"black"}
+            textColor={"black"}
+            onPress={() => {
+              navigation.navigate("Signup");
             }}
-          />
-
+          ></CustomButton>
           <View
             style={{
               flexDirection: "row",
@@ -136,7 +136,7 @@ const Welcome = ({ navigation }) => {
             <Text
               style={{
                 fontSize: 16,
-                color: COLORS.white,
+                color: COLORS.black,
               }}
             >
               Bạn thực sự có tài khoản ?
@@ -145,7 +145,7 @@ const Welcome = ({ navigation }) => {
               <Text
                 style={{
                   fontSize: 16,
-                  color: COLORS.white,
+                  color: COLORS.black,
                   fontWeight: "bold",
                   marginLeft: 4,
                 }}
@@ -157,7 +157,6 @@ const Welcome = ({ navigation }) => {
         </View>
       </View>
     </LinearGradient>
-    
   );
 };
 

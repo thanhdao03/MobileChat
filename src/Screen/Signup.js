@@ -7,8 +7,6 @@ import COLORS from "../constants/colors";
 import { LinearGradient } from "expo-linear-gradient";
 
 const Signup = () => {
-  const [showPassWord, setShowPass] = useState(true);
-  const [showPassWord1, setShowPass1] = useState(true);
   const navigation = useNavigation();
   const [name, setName] = useState("");
   const [BadName, setBadName] = useState(false);
@@ -17,16 +15,7 @@ const Signup = () => {
   const [repassword, setRePassword] = useState("");
   const [BadRePassWord, setBadRePassWord] = useState(false);
   const [BadRechecked, setBadReCechked] = useState(false);
-
-  const [checked, setChecked] = useState("");
-  const [err, setError] = useState(false);
   const [errMessage, setErrMessage] = useState("");
-  showPass = () => {
-    setShowPass(!showPassWord);
-  };
-  // showPass1 = () => {
-  //   setShowPass1(!showPassWord1);
-  // };
   dangKi = () => {
     if (name) {
       setBadName(false);
@@ -54,10 +43,7 @@ const Signup = () => {
       setErrMessage("Vui lòng nhập mật khẩu của bạn");
       return;
     }
-    const data = {
-      tenThanhVien: name,
-      matKhau: repassword,
-    };
+    navigation.navigate("Login");
   };
   return (
     <LinearGradient
@@ -81,9 +67,8 @@ const Signup = () => {
         >
           Bkav Chat
         </Text>
-        <Text style={{ marginLeft: 52, fontSize: 20 }}>Username</Text>
+        <Text style={{ marginLeft: 22, fontSize: 20 }}>Username</Text>
         <CustomTextInput
-          style={{ outlineStyle: "none" }}
           value={name}
           onChangeText={(text) => {
             setName(text);
@@ -103,17 +88,15 @@ const Signup = () => {
           </Text>
         )}
         <View style={{ position: "relative" }}>
-          <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
+          <Text style={{ marginLeft: 22, fontSize: 20, marginTop: 20 }}>
             PassWord
           </Text>
 
           <CustomTextInput
-            style={{ outlineStyle: "none" }}
             value={password}
             onChangeText={(text) => {
               setPassWord(text);
             }}
-            // type={showPassWord1 ? "password" : "texxt"}
             placeholder={""}
             icon={require("../Screen/image/pass.png")}
           ></CustomTextInput>
@@ -124,17 +107,15 @@ const Signup = () => {
           </Text>
         )}
         <View style={{ position: "relative" }}>
-          <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
+          <Text style={{ marginLeft: 22, fontSize: 20, marginTop: 20 }}>
             Comfirm PassWord
           </Text>
 
           <CustomTextInput
-            style={{ outlineStyle: "none" }}
             value={repassword}
             onChangeText={(text) => {
               setRePassword(text);
             }}
-            // type={showPassWord ? "password" : "text"}
             placeholder={""}
             icon={require("../Screen/image/pass.png")}
           ></CustomTextInput>
@@ -145,12 +126,9 @@ const Signup = () => {
           </Text>
         )}
         <CustomButton
-          style={{ outlineStyle: "none" }}
           title={"Signup"}
-          bgColor={"white"}
-          textColor={"black"}
           onPress={() => {
-            dangKi();
+            dangKi("Login");
           }}
         ></CustomButton>
         <Text
@@ -173,5 +151,4 @@ const Signup = () => {
     </LinearGradient>
   );
 };
-const styles = StyleSheet.create({});
 export default Signup;

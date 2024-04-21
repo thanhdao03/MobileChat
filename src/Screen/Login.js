@@ -7,15 +7,40 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Image, Text, View, Pressable } from "react-native";
 import CustomButton from "../common/CustomButton";
 import CustomTextInput from "../common/CustomTextInput";
-
+import { CommonActions } from "@react-navigation/native";
 const Login = () => {
   const navigation = useNavigation();
   const [name, setName] = useState("thanhdao02dd@gmail.com");
+  const [BadName, setBadName] = useState(false);
   const [pass, setPass] = useState("12345678");
+  const [BadPass, setBadPass] = useState(false);
   const [err, setErr] = useState(false);
   const [errMessage, setErrMessage] = useState("");
   const [isChecked, setIsChecked] = useState(false);
-  const validate = () => {};
+  const dangnhap = () => {
+    if (name) {
+      setBadName(false);
+    } else {
+      setBadName(true);
+      setErrMessage("Vui lòng nhập họ và tên");
+      return;
+    }
+    if (pass) {
+      setBadPass(false);
+    } else {
+      setBadPass(true);
+      setErrMessage("Vui lòng nhập mật khẩu ");
+      return;
+    }
+    if (pass) {
+      setBadPass(false);
+    } else {
+      setBadPass(true);
+      setErrMessage("Vui lòng nhập mật khẩu ");
+      return;
+    }
+    navigation.navigate("MainChat");
+  };
   return (
     <LinearGradient
       style={{
@@ -36,16 +61,20 @@ const Login = () => {
       >
         Bkav Chat
       </Text>
-      <Text style={{ marginLeft: 52, fontSize: 20 }}>Username</Text>
+      <Text style={{ marginLeft: 22, fontSize: 20 }}>Username</Text>
       <CustomTextInput
         placeholder={""}
         icon={require("../Screen/image/email.png")}
         value={name}
         onChangeText={setName}
       ></CustomTextInput>
-
+      {BadName == true && (
+        <Text style={{ marginTop: 10, marginLeft: 40, color: "red" }}>
+          {errMessage}
+        </Text>
+      )}
       <View style={{ position: "relative" }}>
-        <Text style={{ marginLeft: 52, fontSize: 20, marginTop: 20 }}>
+        <Text style={{ marginLeft: 22, fontSize: 20, marginTop: 20 }}>
           Password
         </Text>
         <CustomTextInput
@@ -54,6 +83,11 @@ const Login = () => {
           placeholder={""}
           icon={require("../Screen/image/pass.png")}
         ></CustomTextInput>
+        {BadPass == true && (
+          <Text style={{ marginTop: 10, marginLeft: 40, color: "red" }}>
+            {errMessage}
+          </Text>
+        )}
       </View>
       <View
         style={{
@@ -77,16 +111,10 @@ const Login = () => {
         </Text>
       )}
       <CustomButton
-        style={{ outlineStyle: "none" }}
         title={"Login"}
-        bgColor={"white"}
-        textColor={"black"}
-        onPress={
-          () => {
-            navigation.navigate("MainChat");
-          }
-          // => navigation.navigate('MainChat')
-        }
+        onPress={() => {
+          dangnhap("");
+        }}
       ></CustomButton>
       <View
         style={{
