@@ -95,7 +95,7 @@ const Welcome = ({ navigation }) => {
                 color: COLORS.black,
               }}
             >
-              AppChat
+              Bkav Chat
             </Text>
             <View style={{ marginVertical: 22 }}>
               <Text
@@ -105,7 +105,7 @@ const Welcome = ({ navigation }) => {
                   marginVertical: 4,
                 }}
               >
-                Chào mừng các bạn đến với AppChat
+                Chào mừng các bạn đến với BkavChat
               </Text>
               <Text
                 style={{

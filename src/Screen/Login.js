@@ -50,13 +50,14 @@ const Login = () => {
     >
       <Text
         style={{
-          marginTop: 10,
           alignSelf: "flex-start",
           fontSize: 30,
-          fontWeight: 600,
+          fontWeight: 'bold',
           color: COLORS.black,
           marginBottom: 100,
-          marginLeft: 30,
+          marginLeft:20,
+          marginTop:20,
+          marginRight:20
         }}
       >
         Bkav Chat
